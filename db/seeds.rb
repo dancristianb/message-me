@@ -9,3 +9,8 @@
 User.create(username: 'dan', password: 'password')
 User.create(username: 'jay', password: 'password')
 User.create(username: 'vlad', password: 'password')
+
+Message.create(body:'heeeya', user: User.last)
+Message.create(body:'how ya guys doing?', user: User.last)
+Message.create(body:'heey', user: User.second)
+Message.create(body:'hey man! all good, how about you?', user: User.first)
