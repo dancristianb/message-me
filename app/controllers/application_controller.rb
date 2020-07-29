@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    User.find_by(session[:user_id]) if logged_in?
+    User.find(session[:user_id]) if logged_in?
   end
 
   def require_user
