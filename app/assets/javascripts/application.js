@@ -23,10 +23,20 @@ scrollBottom = function() {
     }
 }
 
+submitMessage = function() {
+    $('#message_body').on('keydown', function (e) {
+        if (e.keyCode == 13) {
+            $('button').click();
+            e.target.value = "";
+        }
+    })
+}
+
 $(document).on('turbolinks:load', () => {
     $('.ui.dropdown').dropdown();
     $('.message .close').on('click', function () {
         $(this).closest('.message').transition('fade');
     });
     scrollBottom();
+    submitMessage();
 })
